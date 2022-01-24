@@ -1,7 +1,7 @@
 /* eslint no-unused-vars: "off" */
 import { Column, Entity, PrimaryGeneratedColumn, BaseEntity, JoinColumn, ManyToOne } from 'typeorm';
 
-import Region from './Region';
+import PatientRegion from './PatientRegion';
 
 @Entity({ name: 'recovery_plan' })
 class RecoveryPlan extends BaseEntity {
@@ -10,7 +10,7 @@ class RecoveryPlan extends BaseEntity {
 
   @Column({
     name: 'duration',
-    type: 'text',
+    type: 'int',
     nullable: false,
   })
     duration: number;
@@ -22,12 +22,12 @@ class RecoveryPlan extends BaseEntity {
   })
     examCadence: number;
 
-  @Column({ type: 'int', nullable: false, name: 'region_id' })
-    regionId: number;
+  @Column({ type: 'int', nullable: false, name: 'patient_region_id' })
+    patientRegionId: number;
 
-  @ManyToOne(() => Region, (regionId) => regionId.regionId, { onDelete: 'SET NULL' })
-  @JoinColumn({ name: 'region_id' })
-    region: Region;
+  @ManyToOne(() => PatientRegion, (patientRegion) => patientRegion.patientRegionId, { onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'patient_region_id' })
+    patientRegion: PatientRegion;
 }
 
 export default RecoveryPlan;

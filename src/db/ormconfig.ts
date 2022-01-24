@@ -1,9 +1,7 @@
-import { ConnectionOptions } from 'typeorm';
-
 import config from 'config/index';
 import CustomNamingStrategy from './CustomNamingStrategy';
 
-const ormConfig: ConnectionOptions = {
+const ormConfig = {
   type: config.db.main.dialect as 'postgres',
   host: config.db.main.host,
   port: config.db.main.port,
@@ -12,10 +10,10 @@ const ormConfig: ConnectionOptions = {
   database: config.db.main.database,
   synchronize: false,
   logging: false,
-  entities: ['src/db/entities/**/*.ts'],
-  migrations: ['src/db/migrations/**/*.ts'],
+  migrations: [`${__dirname}/migrations/**/*{.ts,.js}`],
+  entities: [`${__dirname}/entities/**/*{.ts,.js}`],
   cli: {
-    migrationsDir: 'src/db/migrations',
+    migrationsDir: `${__dirname}/migrations`,
   },
   namingStrategy: new CustomNamingStrategy(),
 };

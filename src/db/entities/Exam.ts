@@ -13,7 +13,7 @@ class Exam extends BaseEntity {
   @Column({
     name: 'video_link',
     type: 'text',
-    nullable: false,
+    nullable: true,
   })
     videoLink: string;
 

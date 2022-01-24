@@ -1,14 +1,10 @@
 /* eslint no-unused-vars: "off" */
 import { Column, Entity, PrimaryGeneratedColumn, BaseEntity, JoinColumn, ManyToOne } from 'typeorm';
+
+import { WeightOptionEnum } from 'types';
+
 import PatientRegion from './PatientRegion';
-
 import RecoveryPlan from './RecoveryPlan';
-
-enum WeightOptionEnum {
-  none = 'none',
-  WBAT = 'WBAT',
-  TDWB = 'TDWB'
-}
 
 @Entity({ name: 'goal' })
 class Goal extends BaseEntity {
@@ -18,7 +14,7 @@ class Goal extends BaseEntity {
   @Column({
     name: 'duration',
     type: 'text',
-    nullable: true,
+    nullable: false,
   })
     duration: number; // value in days
 
@@ -27,16 +23,15 @@ class Goal extends BaseEntity {
     type: 'enum',
     enum: WeightOptionEnum,
     default: WeightOptionEnum.none,
-    nullable: false,
   })
-    weight_option: WeightOptionEnum;
+    weightOption: WeightOptionEnum;
 
   @Column({
     name: 'rom',
     type: 'int',
     nullable: false,
   })
-    rom: string; // range of motion
+    rom: number; // range of motion: ;
 
   @Column({ type: 'int', nullable: false, name: 'recovery_plan_id' })
     recoveryPlanId: number;

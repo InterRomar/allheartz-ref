@@ -5,8 +5,8 @@ import errorMessages from '../errorMessages';
 
 const createOne = {
   body: {
-    name: yup.string().strict().required(errorMessages.FIELD_IS_REQUIRED),
-    isPair: yup.boolean().strict().required(errorMessages.FIELD_IS_REQUIRED),
+    regionId: yup.number().strict().required(errorMessages.FIELD_IS_REQUIRED),
+    patientId: yup.number().strict().required(errorMessages.FIELD_IS_REQUIRED),
   },
 };
 
@@ -21,8 +21,8 @@ const updateOne = {
     id: yup.number().required(errorMessages.ID_MISSED),
   },
   body: {
-    name: yup.string().strict(),
-    isPair: yup.boolean().strict(),
+    regionId: yup.number().strict(),
+    patientId: yup.number().strict(),
   },
 };
 

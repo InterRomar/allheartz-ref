@@ -1,9 +1,9 @@
 import { Router } from 'express';
 
-import controllers from 'controllers/goal';
+import controllers from 'controllers/recoveryPlan';
 import createValidationMiddleware from 'middlewares/createValidationMiddleware';
 // import isAuth from 'middlewares/isAuth';
-import validation from 'validation/controllers/goal';
+import validation from 'validation/controllers/recoveryPlan';
 
 export default (router: Router): void => {
   // router.use(isAuth);

@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import controllers from 'common/controllers/joint';
+import controllers from 'common/controllers/movement';
 import createValidationMiddleware from 'middlewares/createValidationMiddleware';
 // import isAuth from 'middlewares/isAuth';
 import validation from 'validation/controllers/movement';

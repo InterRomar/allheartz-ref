@@ -23,9 +23,11 @@ class BaseService<EntityType> {
   }
 
   private getRepo = (): void => {
+    // TODO: change from Entity.name to EntityTarget if possible
+    const entityName = this.Entity.toString().split(' ')[1];
     try {
-      this.repo = typeorm.getConnection('main').getRepository(this.Entity);
-    } catch {
+      this.repo = typeorm.getConnection('main').getRepository(entityName.slice(0, entityName.length - 2));
+    } catch (err) {
       setTimeout(() => {
         this.getRepo();
       }, 20);

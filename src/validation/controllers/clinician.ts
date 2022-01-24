@@ -19,6 +19,9 @@ const getOne = {
 };
 
 const updateOne = {
+  params: {
+    id: yup.number().required(errorMessages.ID_MISSED),
+  },
   body: {
     email: standardValidation.email,
     firstName: yup.string().strict(),

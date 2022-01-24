@@ -23,13 +23,15 @@ const getOne = {
 };
 
 const updateOne = {
+  params: {
+    id: yup.number().required(errorMessages.ID_MISSED),
+  },
   body: {
     email: standardValidation.email,
     firstName: yup.string().strict(),
     lastName: yup.string().strict(),
     phoneNumber: standardValidation.phone,
-    gamingId: yup.number().strict().nullable(),
-    dateOfBirth: standardValidation.patientDateOfBirthRequired,
+    dateOfBirth: standardValidation.patientDateOfBirth,
     gender: standardValidation.patientGender,
     clinicianId: yup.number().required(errorMessages.CLINICIAN_ID_MISSED),
   },

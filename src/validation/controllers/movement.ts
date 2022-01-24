@@ -16,8 +16,11 @@ const getOne = {
 };
 
 const updateOne = {
+  params: {
+    id: yup.number().required(errorMessages.ID_MISSED),
+  },
   body: {
-    name: yup.string().strict().required(errorMessages.FIELD_IS_REQUIRED),
+    name: yup.string().strict(),
   },
 };
 

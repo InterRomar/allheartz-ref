@@ -6,7 +6,7 @@ import { JointEnum, MovementTypeEnum, SideEnum } from 'types';
 import Joint from './Joint';
 import Movement from './Movement';
 
-console.log(JointEnum);
+// TODO: findOrCreate for this repo
 @Entity({ name: 'region' })
 class Region extends BaseEntity {
   @PrimaryGeneratedColumn({ name: 'region_id' })
@@ -21,14 +21,6 @@ class Region extends BaseEntity {
     side: SideEnum;
 
   @Column({
-    name: 'movement_type',
-    type: 'enum',
-    enum: MovementTypeEnum,
-    nullable: false,
-  })
-    movementType: MovementTypeEnum;
-
-  @Column({
     name: 'alignment_img_link',
     type: 'text',
     nullable: true,
@@ -38,11 +30,11 @@ class Region extends BaseEntity {
   @Column({
     name: 'example_video_link',
     type: 'text',
-    nullable: false,
+    nullable: true,
   })
     exampleVideoLink: string;
 
-  // ???
+  // ??? where from?
   @Column({
     name: 'default_post_exam_survey_type',
     type: 'text',
@@ -50,7 +42,7 @@ class Region extends BaseEntity {
   })
     defaultPostExamSurveyType: string;
 
-  // ???
+  // ??? where from?
   @Column({
     name: 'default_recovery_plan',
     type: 'text',

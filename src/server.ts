@@ -8,8 +8,8 @@ process.on('unhandledRejection', (reason, p) => {
 });
 
 connectDb().then(() => {
-  app.listen(4000, () => {
-    console.log('hell0');
+  app.listen(4002, () => {
+    console.log('Server has been started on  Port: 4002');
   });
 }).catch((err) => console.log(err));
 

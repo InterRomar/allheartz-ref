@@ -14,3 +14,9 @@ export enum SideEnum {
   left = 'left',
   right = 'right'
 }
+
+export enum WeightOptionEnum {
+  none = 'none',
+  WBAT = 'WBAT',
+  TDWB = 'TDWB'
+}
