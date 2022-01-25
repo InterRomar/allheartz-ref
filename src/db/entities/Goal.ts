@@ -1,4 +1,3 @@
-/* eslint no-unused-vars: "off" */
 import { Column, Entity, PrimaryGeneratedColumn, BaseEntity, JoinColumn, ManyToOne } from 'typeorm';
 
 import { WeightOptionEnum } from 'types';

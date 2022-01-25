@@ -11,6 +11,9 @@ import RecoveryPlan from './entities/RecoveryPlan';
 import Region from './entities/Region';
 import Joint from './entities/Joint';
 import Movement from './entities/Movement';
+import SurveyQuestion from './entities/SurveyQuestion';
+import SurveyGroup from './entities/SurveyGroup';
+import SurveyTopic from './entities/SurveyTopic';
 
 export type ServiceType<Entity> = BaseService<Entity>
 
@@ -26,6 +29,9 @@ export default {
   region: new BaseService(Region),
   joint: new BaseService(Joint),
   movement: new BaseService(Movement),
+  surveyQuestion: new BaseService(SurveyQuestion),
+  surveyGroup: new BaseService(SurveyGroup),
+  surveyTopic: new BaseService(SurveyTopic),
 };
 
-// total model count: 11
+// total model count: 14

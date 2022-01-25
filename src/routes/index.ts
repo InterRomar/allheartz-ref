@@ -12,6 +12,7 @@ const setRoutes = (fileOrFolder: any, app: express.Express, path: string) => {
     const router = express.Router();
     fileOrFolder(router);
 
+    console.log(path);
     app.use(path, router);
     return;
   }

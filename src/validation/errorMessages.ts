@@ -1,10 +1,12 @@
 import { GenderEnum } from 'db/entities/Patient';
 
 export default {
-  ID_MISSED: 'Pass record ID to params',
   FIELD_IS_REQUIRED: 'Field is required',
-  FIRST_NAME_MISSED: 'Enter your first name',
 
+  ID_MISSED: 'Pass record ID to params',
+  NAME_MISSED: 'Enter your first name',
+
+  FIRST_NAME_MISSED: 'Enter your first name',
   LAST_NAME_MISSED: 'Enter your last name',
 
   EMAIL_MISSED: 'Enter your email',
@@ -30,4 +32,6 @@ export default {
   MIN_IMG_LINK_MISSED: 'Min image link is missed',
   MAX_IMG_LINK_MISSED: 'Max image link is missed',
 
+  ANSWER_TYPE_INVALID: 'Answer Type is invalid',
+  ANSWER_TYPE_MISSED: 'Answer Type is missed',
 };

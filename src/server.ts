@@ -1,5 +1,7 @@
 import 'module-alias/register';
 
+import config from 'config';
+
 import app from './app';
 import connectDb from './db/connect';
 
@@ -8,8 +10,8 @@ process.on('unhandledRejection', (reason, p) => {
 });
 
 connectDb().then(() => {
-  app.listen(4002, () => {
-    console.log('Server has been started on  Port: 4002');
+  app.listen(config.port, () => {
+    console.log(`Server has been started on port: ${config.port}`);
   });
 }).catch((err) => console.log(err));
 
